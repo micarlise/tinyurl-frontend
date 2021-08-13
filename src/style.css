@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+/* filler space */
+.left-space {
+    width: 20%;
+}
+
+.right-space {
+    width: 20%;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.title {
+    font-size: 26px;
+}
