@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+  nginx:
+    image: nginx:latest
+    container_name: frontend
+    volumes: 
+      - ./src:/usr/share/nginx/html
+    ports:
+      - 8080:80
