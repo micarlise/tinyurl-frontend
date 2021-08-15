@@ -17,15 +17,26 @@ function newEntry(key, url) {
     return entry;
 }
 
-let urls = [
-    ['k3829k3k', 'https://www.google.com'],
-    ['li9382kl', 'https://www.yahoo.com'],
-    ['dk2849dl', 'https://www.bing.com'],
-    ['aei38fga', 'https://www.mozilla.com']
-];
+/*
+let items = {
+    'k3829k3k': 'https://www.google.com',
+    'li9382kl': 'https://www.yahoo.com',
+    'dk2849dl': 'https://www.bing.com',
+    'aei38fga': 'https://www.mozilla.com'
+};
+*/
 
 const tinyurls = document.querySelector('.tinyurls');
+const server = 'http://localhost:3000/'
 
-urls.forEach(item => {
-    tinyurls.appendChild(newEntry(item[0], item[1]));
+fetch(server)
+.then((response) => {
+    items = response.json();
+    return items;
+})
+.then((items) => {
+
+    for (const key in items) {
+        tinyurls.appendChild(newEntry(key, items[key]));
+    }
 });
