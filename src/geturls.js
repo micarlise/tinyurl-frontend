@@ -17,15 +17,6 @@ function newEntry(key, url) {
     return entry;
 }
 
-/*
-let items = {
-    'k3829k3k': 'https://www.google.com',
-    'li9382kl': 'https://www.yahoo.com',
-    'dk2849dl': 'https://www.bing.com',
-    'aei38fga': 'https://www.mozilla.com'
-};
-*/
-
 const tinyurls = document.querySelector('.tinyurls');
 const server = 'http://localhost:3000/'
 
