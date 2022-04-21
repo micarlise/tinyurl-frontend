@@ -1,0 +1,20 @@
+<div class="url-container">
+    <div class="left-space"></div>
+    <mat-card>
+        <mat-card-title>TinyUrls</mat-card-title>
+        <mat-card-content>
+            <mat-list>
+                <mat-list-item
+                    *ngFor="let url of urls"
+                >
+                    <div class="entry">
+                        <div class="key">{{url.key}}</div>
+                        <div class="url">{{url.url}}</div>
+                    </div>
+                </mat-list-item>
+            </mat-list>
+
+        </mat-card-content>
+    </mat-card>
+    <div class="right-space"></div>
+</div>
