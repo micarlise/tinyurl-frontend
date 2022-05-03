@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Shortcodes } from '../shared/interfaces/shortcodes';
+import { Shortcodes } from '../shared/interfaces/shortcodes.interface';
+import { TinyUrlService } from '../shared/services/tinyurl/tinyurl.service';
 
 @Component({
   selector: 'app-urls',
@@ -8,20 +9,16 @@ import { Shortcodes } from '../shared/interfaces/shortcodes';
   styleUrls: ['./urls.component.css']
 })
 export class UrlsComponent implements OnInit {
-  urls: Shortcodes[] = [
-    {
-      key: 'abjekdk',
-      url: 'https://www.google.com'
-    },
-    {
-      key: 'dkelsje293',
-      url: 'https://www.yahoo.com'
-    }
-  ];
+  urls: Shortcodes[];
 
-  constructor() { }
+  constructor(private tinyurls: TinyUrlService) { }
 
   ngOnInit(): void {
+    this.loadUrls();
+  }
+
+  loadUrls() {
+    this.urls = this.tinyurls.getAllUrls();
   }
 
 }
